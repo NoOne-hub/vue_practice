@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day2_2</title>
+    <style type="text/css">
+        .box1,.box3{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: tan;
+        }
+        .box3{
+            background-color: thistle;
+        }
+        .box2, .box4{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+        }
+        .box3 > p{
+	        color: red;
+        }
+        div.box2{
+            color: green;
+        }
+        div .box4{
+            color:blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <p>box1</p>
+        <div class="box2">
+            <p>box2</p>
+        </div>
+    </div>
+
+    <div class="box3">
+        <p>box3</p>
+        <div class="box4">
+            <p>box4</p>
+        </div>
+    </div>
+</body>
+</html>

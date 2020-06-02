@@ -1,0 +1,25 @@
+div{
+    color: yellow;
+    height: 50px;
+    width: 100px;
+    border: 1px solid red;
+    background-color: green;
+}
+
+#box1{
+    width: 100px;
+    height: 100px;
+    background-color: tan;
+}
+
+#box2{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: turquoise;
+}
