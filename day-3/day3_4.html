@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+</head>
+<body>
+    <!--
+        BOM操作, 操作浏览器(document)
+        DOM操作 操作网页(文档对象 包含所有标签及标签属性及函数)
+    -->
+
+    <div>div1</div>
+    <div>div2</div>
+    <div id="box">div3</div>
+    <p class="p"></p>
+    <p class="p"></p>
+    <p class="p1"></p>
+
+    <a href=""></a>
+    <a href=""></a>
+    <a href=""></a>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <input name="username" value="username"/>
+
+</body>
+<script type="text/javascript">
+    // 属性查找标签
+    console.log(document.getElementById("box"));
+    console.log(document.getElementsByClassName("p"));
+    
+    // 选择器查找标签
+    //通过选择器找到同一选择器下的第一个标签
+    console.log(document.querySelector("div"));
+    console.log(document.querySelector(".p"));
+    console.log(document.querySelector("ul li"));
+    //通过选择器找到所有标签, 值为标签数组
+    console.log(document.querySelectorAll("ul li")[0]);
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom操作属性</title>
+    <style type="text/css">
+        .box{
+            height: 50px;
+            background-color: tan;
+        }
+        #p1{
+            color: red;
+
+        }
+    </style>
+</head>
+<body>
+    <div>我是div</div>
+    <p>我是p标签</p>
+    <span>我是span标签</span>
+</body>
+<script type="text/javascript">
+    var div = document.querySelector("div");
+    var p = document.querySelector("p");
+    var span = document.querySelector("span");
+    div.setAttribute("class", "box");
+    div.setAttribute("style", "width: 100px;")
+    p.setAttribute("id", "p1");
+    span.setAttribute("style", "background-color: yellow;");
+    span.setAttribute("style", "border: 1px;")
+    //属性名获取
+    console.log(div.getAttribute("style"));
+    console.log(p.getAttribute("id"));
+    //操作类型名
+    console.log(div.className);
+    console.log(div.id);
+    //操作样式
+    p.style.width = "100px";
+    p.style.border = "1px solid black";
+    p.style.paddingLeft = "10px";
+    p.style.borderRadius = "25px";
+
+    //操作内容
+    //innerText只能获取文本, html能获取所有内容
+    console.log(div.innerHTML);
+    console.log(div.innerText);
+    div.innerText="123<p>p标签</p>";//设置内容,无法设置标签
+    div.innerHTML="123<p>p标签</p>";//设置内容,可以设置标签
+</script>
+</html>

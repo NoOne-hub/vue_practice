@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="./static/js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div id="box">
+        <div class="box1">
+            <p>测试jquery</p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $("#box").width("100px");
+    $("#box").height("100px");
+    $("#box").css({
+        "width": "100px",
+        "height": "100px",
+        "background-color": "red"
+    });
+</script>
+</html>

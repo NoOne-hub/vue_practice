@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue学习</title>
+</head>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+<script src="./static/js/vue.js"></script>
+<body>
+<div id="app">
+    {{Message}}
+</div>
+
+<div id="app-2">
+    <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息
+    </span>
+</div>
+
+<div id="app-3">
+    <p v-if="seen">现在你看到我</p>
+</div>
+<div id="app-4">
+    <ul>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ul>
+</div>
+<div id="app-5">
+    <p>{{ message}}</p>
+    <button v-on:click="reverseMessage">反转消息</button>
+</div>
+
+<div id="app-6">
+    <p>{{ message}}</p>
+    <input v-model="message"/>
+</div>
+<script type="text/javascript">
+    var data = {Message: "Hello World"}
+    var vm = new Vue({
+        el : "#app",
+        data : data
+    });
+    var app2 = new Vue({
+        el: '#app-2',
+        data:{
+            message: '页面加载于' + new Date().toLocaleString()
+        }
+    });
+    // app2.message="新消息";
+    var app3 = new Vue({
+        el: '#app-3',
+        data: {
+            seen: true
+        }
+    });
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos:[
+                {text: '测试1'},
+                {text: '测试2'},
+                {text: '测试3'}
+            ]
+        }
+    });
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            message: "app-5"
+        },
+        methods: {
+            reverseMessage:function(){
+                this.message = "我点击了按钮"
+            }
+        }
+    });
+    var app6 = new Vue({
+        el: '#app-6',
+        data:{
+            message: "app-6"
+        },
+
+    })
+
+</script>
+</body>
+</html>

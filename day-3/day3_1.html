@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style type="text/css">   
+        *{
+            /*去除浏览器外内边距*/
+            margin: 0;
+            padding: 0;
+        }
+        .box1, .box3{
+            width: 200px;
+            height: 200px;
+        }
+        .box2, .box4{
+            width: 100px;
+            height: 100px;
+        }
+            /*
+        定位 作用:布局
+        1. 相对定位
+            - 不会改变标签的原始状态
+        2. 绝对定位
+            - 设置定位以后,当父级元素有定位属性时候, 相对于父级元素
+            - 设置定位以后,逐级往上找,跟异常一样,一直往上抛,直到有人处理他
+            - 脱离原油文档流,后面的元素会向前自动移位
+            - 当自己元素宽度大于父级元素时候,并不会错位
+            - 同级元素互相不干扰
+        3. 固定定位
+            - 相对于body
+        */
+        .box1{
+            position: relative;
+            background-color: red;
+            top: 20pxpx;
+            left: 20px;
+        }
+        .box2{
+            background-color: green;
+            position: absolute;
+            top: 0px;
+            left: 10px;
+        }
+        .box3{
+            background-color: yellow;
+            /* position: relative; */
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .box4{
+            background-color: blue;
+            position: fix;
+            top: 0px;
+            left: 500px;
+        }
+    </style>
+</head>
+    
+<body>
+    <div class="box1">
+        <div class="box2">
+
+        </div>
+    </div>
+    <div class="box3">
+        <div class="box4">
+
+        </div>
+    </div>
+</body>
+</html>
