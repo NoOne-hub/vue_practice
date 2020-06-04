@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue生命周期</title>
+    <script src="./static/js/vue.js"></script>
+</head>
+<body>
+    <!--
+        在创建vue实例对象时, 有两个阶段 第一阶段是初始化时间绑定机制, 初始化
+        生命周期的循环. 初始化之后会触发beforeCreate()回调函数
+        第二个阶段是初始化注入器, 初始化尸体对象, 此时表示vue实例对象
+        已经创建成功, 初始化之后会触发created()回调函数
+        //beforeCreate() vue实例对象创建之前, 此时el属性和data属性均为空
+        // created() vue实例对象创建之后, 此时el属性为空, data属性已经存在
+    -->
+
+    <div id="app">
+        {{ name }}
+    </div>
+</body>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name: "NoOne"
+        },
+        beforeCreate:function(){
+            console.log('beforeCreate');
+            console.log(this.$el);
+            console.log(this.$data);
+        },
+        created: function(){
+            console.log('Created');
+            console.log(this.$el);
+            console.log(this.$data['name']);
+        }
+    })
+</script>
+</html>

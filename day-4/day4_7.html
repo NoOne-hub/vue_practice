@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性</title>
+</head>
+<body>
+    <div id="app">
+        <p>订单金额: <span v-html="amount"></span></p>
+        <p v-html="result"></p>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    /*
+    1. 为什么使用计算属性
+    设计初衷用于简单计算,但过多会让模板难以维护
+    例计算用户订单金额
+    订单金额 = {{ count * price* discount + freight}}
+    
+    为了解决过于复杂的计算, 我们引入了计算属性computed
+    在使用时候先定义计算属性 将复杂的计算在计算属性中直接计算完成, 然后给视图使用就可以了
+
+    */
+
+    var data = {
+        count: 5,
+        price: 11.5,
+        discount: 0.85,
+        freight: 3.5
+    }
+    var vm = new Vue({
+        el: '#app',
+        data: data,
+        computed:{
+            amount: function(){
+                console.log('你好');
+                return '<span>' + (this.$data.count * this.$data.price * this.$data.discount + this.$data.freight) + '</span>';
+            },
+            result: function(){
+                return '<span>' + this.$data.count*this.$data.price + '</span>';
+            }
+        }
+    })
+</script>
+</html>

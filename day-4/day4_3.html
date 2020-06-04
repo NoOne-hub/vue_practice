@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+</head>
+<body>
+    <div id="app">
+        {{ name }}
+        <ul>
+            <li>{{ user.name}}</li>
+            <li>{{ user.desc}}</li>
+        </ul>
+        <ul>
+            <li>{{ names[0] }}</li>
+            <li>{{ names[1] }}</li>
+            <li>{{ names[2] }}</li>
+        </ul>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    //模板语法
+    
+
+    var data = {
+        name: 'vue',
+        user: {
+            name: 'vue',
+            desc: 'this is vue'
+        },
+        names: ['vue', 'react', 'angular']
+    }
+    var vm = new Vue({
+        el: '#app',
+        data: data
+    })
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>methods</title>
+</head>
+<body>
+    <div id="app">
+        <p>订单金额{{getAmount()}}</p>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    /*
+    computed只有依赖发生改变才会重新计算, 
+    methods每次都会重新计算
+    */
+    var data = {
+        count: 10,
+        price: 12.5,
+        discount: 0.75,
+        freight: 30
+    }
+    var vm = new Vue({
+        el: '#app',
+        data: data,
+        methods: {
+            getAmount:function(){
+                console.log("你好");
+                return this.count * this.price*this.discount+ this.freight;
+            }
+        }
+    })
+</script>
+</html>

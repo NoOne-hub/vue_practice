@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mounted</title>
+    <script src="./static/js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{ name }}
+    </div>
+
+</body>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name: "NoOne"
+        },
+        beforeMount: function(){
+            console.log("beforeMount");
+            console.log(this.$el.innerHTML);
+        },
+        mounted:function(){
+            console.log("Mounted");
+            console.log(this.$el.innerHTML);
+        },updated:function(){
+            console.log("update");
+            console.log(this.$el.innerHTML);
+        },beforeUpdate:function(){
+            console.log("beforeupdate");
+            
+        }
+    });
+    vm.name="123";
+
+    //beforeUpdate updated
+    // 属性更新之前的回调以及更新之后的回调
+
+    //beforeDestroy destroyed
+    // 销毁之前的回调以及销毁时的回调
+</script>
+</html>

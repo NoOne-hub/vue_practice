@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表达式</title>
+</head>
+<body>
+    <div id="app">
+        {{ 5 + 5 }}<br/>
+        {{ok? 'YES': 'NO'}}<br/>
+        {{ message.split('').reverse().join('')}}
+        <div v-bind:id="'list-'+id"><!--字符串拼接-->
+            NoOne_is_here
+        </div>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    /*
+    vue框架中提供了js表达式
+    同样v-bind绑定中也可以进行一些运算
+    同样对于所有数据绑定,vue都提供了完整的js表达式
+    */
+
+    var data = {
+        ok: true,
+        message: "NoOne",
+        id: 1
+    }
+    var app = new Vue({
+        el: '#app',
+        data: data
+    });
+</script>
+</html>
