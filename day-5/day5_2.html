@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-for='type in types'>
+            <ul>
+                <li v-for="(good, index) in filterGoods(goods, type)" v-if="good.n==type.n && index<4">{{good}},
+                    {{index}}</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    var data = {
+        types: [
+            { n: 1 },
+            { n: 2 },
+            { n: 3 }
+        ],
+        goods: [
+            { name: 'hehe1', n: 1 },
+            { name: 'hehe3', n: 3 },
+            { name: 'hehe2', n: 2 },
+            { name: 'hehe1', n: 1 },
+            { name: 'hehe1', n: 1 },
+            { name: 'hehe2', n: 2 },
+            { name: 'hehe1', n: 1 },
+            { name: 'hehe2', n: 2 },
+            { name: 'hehe2', n: 2 },
+            { name: 'hehe3', n: 3 },
+            { name: 'hehe3', n: 3 },
+            { name: 'hehe1', n: 1 },
+            { name: 'hehe3', n: 3 },
+            { name: 'hehe3', n: 3 },
+            { name: 'hehe3', n: 3 }
+        ]
+    }
+
+    var vm = new Vue({
+        el: '#app',
+        data: data,
+        methods: {
+            filterGoods: function (goods, t) {
+                return goods.filter(function (good) {
+                    return good.n == t.n
+                })
+            }
+        }
+    })
+</script>
+
+</html>

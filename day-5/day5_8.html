@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <ul v-if="types.n == 1">
+            <li v-for="good in goods" v-if="good.n == types.n">{{good}}</li>
+        </ul>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    // 当v-for v-if作用于同一个标签时,v-for的优先级就比v-if更高
+    // 如何让v-if的优先级高于v-for,v-if写在父标签上
+    var data = {
+        types: {
+            n: 1
+        },
+        goods: [
+            { name: 'hehe1', n: 1 },
+            { name: 'hehe3', n: 3 },
+            { name: 'hehe2', n: 2 },
+            { name: 'hehe1', n: 1 },
+            { name: 'hehe1', n: 1 },
+            { name: 'hehe2', n: 2 },
+            { name: 'hehe1', n: 1 },
+            { name: 'hehe2', n: 2 },
+            { name: 'hehe2', n: 2 },
+            { name: 'hehe3', n: 3 },
+            { name: 'hehe3', n: 3 },
+            { name: 'hehe1', n: 1 },
+            { name: 'hehe3', n: 3 },
+            { name: 'hehe3', n: 3 },
+            { name: 'hehe3', n: 3 }
+        ]
+    }
+    var vm = new Vue({
+        el: "#app",
+        data: data
+    })
+</script>
+
+</html>

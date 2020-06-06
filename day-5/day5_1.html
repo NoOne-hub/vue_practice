@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <h4>价格大于6000的商品</h4>
+        <ul>
+            <li v-for="good in filterGoodList">
+                {{ good.name }} === {{ good.price}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    var data = {
+        goodsList: [
+            {name: 'iphone', price: '8888'},
+            {name: 'mp3', price: '888'},
+            {name: 'video', price: '88'},
+            {name: 'TV', price: '7777'}
+        ]
+    }
+
+    var vm = new Vue({
+        el: '#app',
+        data : data,
+        computed: {
+            filterGoodList: function(){
+                return this.goodsList.filter(function(good){
+                    return good.price > 6000;
+                })
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <h4>v-show</h4>
+        <p v-show="isLogin == true">v-show内容</p>
+        <h4>v-if</h4>
+        <p v-if="isLogin">v-if内容</p>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            isLogin: false
+        }
+    })
+</script>
+
+</html>

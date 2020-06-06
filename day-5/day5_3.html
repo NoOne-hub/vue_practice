@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加减乘除</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 
+        我们可以直接将事件处理,所做的事情直接写在""中,
+        同样我们也可以去调用一个自定义函数,此自定义函数写在methods中 
+        -->
+        <button v-on:click="count ++">加一</button>
+        <button @click="count --">减一</button>
+
+        <button @click="cheng()">乘2</button>
+        <button v-on:click="chu()">除3</button>
+
+        <p>count={{count}}</p>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            count: 0
+        },
+        methods: {
+            cheng: function () {
+                this.count *= 2;
+            },
+            chu: function () {
+                this.count /= 3;
+            }
+        }
+    })
+</script>
+
+</html>
