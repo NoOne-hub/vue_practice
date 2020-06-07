@@ -183,3 +183,105 @@ v-show决定是否显示渲染元素(这个元素是存在的,只不过是修改
 
 ![image-20200606221356303](imgs/image-20200606221356303.png)
 
+## 自学
+
+用dom获取属性进行验证
+
+```javascript
+
+function verifyPhone_num(){
+    var phone_num = document.getElementById("phone_num");
+    if(!validatemobile(phone_num.value)){
+        phone_num.setAttribute("class","wrong");
+        //phone_num.focus();
+        return;
+    }
+    phone_num.setAttribute("class", "right");
+
+    
+}
+```
+
+用form进行表单对齐
+
+![image-20200606232955477](imgs/image-20200606232955477.png)
+
+css进行渲染,让其居中,同时设置背景颜色
+
+![image-20200606233026760](imgs/image-20200606233026760.png)
+
+![image-20200606233115371](imgs/image-20200606233115371.png)
+
+用onblur进行焦点失去验证, 
+
+
+
+首先
+
+```css
+/*去除默认边距*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*设置header的左外边距*/
+.header{
+    width: 100px;
+    margin-left: 30%;
+
+}
+
+/*设置content的宽度以及背景颜色*/
+.content{
+    width: 400px;
+    height: 200px;
+    margin-left: 30%;
+    background-color: lightskyblue;
+}
+
+/*设置文字居中*/
+td{
+    height: 30px;
+    font-size: 13px;
+    text-align: right;
+}
+/*设置错误为红色,正确为绿色*/
+.right{
+    color: green;
+}
+
+.wrong{
+    color: red;
+}
+```
+
+
+
+同时利用vue进行设置
+
+```vue
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#header',
+        data: {
+            isLogin: 0
+        }
+    })
+    var vm1 = new Vue({
+        el: '#app',
+        data: {
+            verify_message: "未登录状态"
+        },
+        methods: {
+            Verify: function(){
+                return 1;
+            }
+        }
+    })
+
+</script>
+```
+
+![image-20200607083926215](imgs/image-20200607083926215.png)
+

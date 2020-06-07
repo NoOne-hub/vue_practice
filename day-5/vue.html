@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue小前端项目</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            float: right;
+            margin-right: 30px;
+        }
+
+        #footer {
+            height: 100px;
+            width: 200px;
+            margin-left: 200px;
+            font-size: 12px;
+        }
+
+        #content {
+            width: 400px;
+            height: 200px;
+            margin-left: 30%;
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header" class="header">
+
+        <div v-if="isLogin">
+            <a class="all" href="#">已经登录</a>
+        </div>
+        <div v-else>
+            <a class="all" href="#">未登录</a>
+        </div>
+    </div>
+    <div id="content">
+
+    </div>
+    <div id="footer">
+        &emsp;&copy; 版权所有 20174350434
+    </div>
+</body>
+
+
+</html>

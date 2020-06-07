@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*设置header的左外边距*/
+.header{
+    width: 100px;
+    margin-left: 30%;
+
+}
+
+
+.content{
+    width: 400px;
+    height: 200px;
+    margin-left: 30%;
+    background-color: lightskyblue;
+}
+
+
+
+input{
+    width: 100px;
+}
+td{
+    height: 30px;
+    font-size: 13px;
+    text-align: right;
+}
+.footer{
+    height: 100px;
+    width: 200px;
+    margin-left: 200px;
+    font-size: 12px;
+}
+
+.right{
+    color: green;
+}
+
+.wrong{
+    color: red;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css"/>
+    <script type="text/javascript" src="script/verify.js"></script>
+    <script src="../static/js/vue.js"></script>
+</head>
+<body>
+    <div class="header" id="header">
+        <div id="test">
+            <a v-if="isLogin" class="links" href="#">已经登录</a>
+            <a v-else class="links" href="#">未登录</a>
+            <a class="links" href="#">登录</a>
+            <a class="links" href="#">注册</a>
+        </div>
+    </div>
+    <div class="content">
+        <form target="do">
+        <table id="info">
+            <center>
+                <label>
+                    新用户申请(带*的为必填项)变红为错误
+                </label>
+            </center>
+            <tr>
+                <td>用户名</td>
+                <td><input id="username" type="text" onblur="verifyUsername()"/></td>
+                <td>*</td>
+                <td>真实姓名</td>
+                <td><input id="realname" type="text" onblur="verifyRealname()"/></td>
+                <td>*</td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input id="password" type="password" onblur="verifyPassword()"/></td>
+                <td>*</td>
+                <td>
+                    性别
+                </td>
+                <td style="text-align: left;">
+                    <input style="width: 10px;" type="radio" name="sex"/>
+                    女
+                    <input style="width: 10px;" type="radio" name="sex"/>
+                    男
+                </td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td><input id="repassword" type="password" onblur="verifyRepassword()"/></td>
+                <td>*</td>
+                <td>省/市</td>
+                <td style="text-align:left;">
+                    <select>
+                        <option value="1">北京</option>
+                        <option>天津</option>
+                        <option>上海</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </br>
+    <div id="app">
+        <input v-on:click="Verify" style="margin-left:100px; width:100px;" type="button" :value="verify_message" />
+        &emsp;&emsp;
+        <input type="reset" value="重置"/>
+        </form>     
+    </div>
+        
+
+    </br>
+    </br>
+        <div class="footer">
+                &emsp;&copy; 版权所有 20174350434
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#header',
+        data: {
+            isLogin: 0
+        }
+    })
+    var vm1 = new Vue({
+        el: '#app',
+        data: {
+            verify_message: "未登录状态"
+        },
+        methods: {
+            Verify: function(){
+                return 1;
+            }
+        }
+    })
+
+</script>
+</html>
