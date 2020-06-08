@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            请输入name值: <input type="text" v-model="name" @blur="handBlur"/>
+        </div>
+    </div>
+</body>
+<script src="./static/js/vue.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name:''
+        },
+        methods: {
+            handBlur: function(){
+                console.log("文本框失去焦点");
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <div>请输入name值</div>
+        <input type="text" v-model="name"/>
+        <hr/>
+        name = {{ name }}
+        <div>
+            性别:<input v-model="gender" type="radio" name="gender" value="man"/>男<br/>
+            <input v-model="gender" type="radio" name="gender" value="women"/>女<br/>
+            <hr/>
+            你选择的性别: {{ gender}}
+        </div>
+        <div>
+            选择省份
+            <select v-model="province">
+                <option value="辽宁省">辽宁省</option>
+                <option value="黑龙江">黑龙江</option>
+            </select>
+            <hr/>
+            你选择的省份: {{ province }}
+        </div>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    /*
+表单处理主要分为两部分内容:
+1. 表单输入绑定,表单输入数据如何与vue框架中的data数据双向绑定
+2. 内容是表单事件处理
+
+在Vue中实现单双向绑定, 直接使用v-model指令进行关联
+v-model会根据空间类型自动选取正确的方法来更新元素
+    */
+    var vm = new Vue({
+       el: '#app',
+       data : {
+           name: 'test',
+           gender:'man',
+           province: ''
+       },
+       methods:{
+
+       }
+   });
+</script>
+</html>

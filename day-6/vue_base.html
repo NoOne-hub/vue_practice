@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue基础应用</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            todo-list
+            <div>
+                添加新项目<input type="text" v-model="item.name" @keyup.enter="addItem"/>
+            </div>
+            <div>
+                <ul>
+                    <li v-for="(item, index) in pageItems">
+                        {{ item.name }}
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#" @click.prevent="lastpage">上一页</a></li>
+                    <li v-for="p in pagecount">
+                        <a href="#" @click.prevent="jmpPage(p)">{{p}}</a>
+                    </li>
+                    <li><a href="#" @click.prevent="nextpage">下一页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./static/js/vue.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var data = {
+        items: [
+            {name: 'item1', status: 1},
+            {name: 'item2', status: 1},
+            {name: 'item3', status: 1},
+            {name: 'item4', status: 1},
+            {name: 'item5', status: 1},
+            {name: 'item6', status: 1},
+            {name: 'item7', status: 1},
+            {name: 'item8', status: 1},
+            {name: 'item9', status: 1},
+            {name: 'item0', status: 1}
+        ],
+        pagesize: 5,
+        page: 1,
+        item: {
+            name: '',
+            status: ''
+        }
+    }
+
+    var vm = new Vue({
+        el: '#app',
+        data: data,
+        computed:{
+            pageItems: function(){
+                var offset = (this.page-1) * this.pagesize;
+                return this.items.slice(offset, offset+this.pagesize);
+            },
+            pagecount: function(){
+                return Math.ceil(this.items.length / this.pagesize);
+            }
+        },
+        methods:{
+            lastpage: function(){
+                if(this.page > 1){
+                    this.page --;
+                }
+            },
+            jmpPage:function(page){
+                this.page = page;
+            },
+            nextpage: function(){
+                if(this.page < this.pagecount){
+                    this.page++;
+                }
+            },
+            addItem: function(){
+                this.items.push({name: this.item.name, status: 1});
+                this.item.name = '';
+            }
+        }
+    })
+</script>
+</html>

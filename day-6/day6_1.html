@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <h4>键盘事件</h4>
+        <input type="text" @keyup="keyupevent"/>
+        <a @mousemove="mousemoveevent">我是监听鼠标事件</a>
+        <a href="event_deal.html" @click.prevent="aclick">跳转到事件处理1</a>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    /*
+    鼠标事件,键盘事件
+    鼠标事件: click单机 dbclick双击, mouseover鼠标经过, mouseout鼠标离去
+    键盘: keydown键盘按下 keyup键盘抬起
+    事件修饰符 主要指我们在vue事件处理过程中,可以试用它来阻止默认行为,阻止事件冒泡
+    或者获取键盘修饰等基本功能, 使用方式很简单, 在v-on指令后用点号连接事件
+    修饰符: stop阻止事件冒泡, prevent阻止事件默认行为,capture捕获内部元素
+    once只执行一次
+    
+    */
+   var vm = new Vue({
+       el: '#app',
+       methods:{
+           keyupevent:function(){
+               console.log("键盘弹起事件监听");
+           },
+           mousemoveevent: function(){
+               console.log("鼠标移动事件监听");
+           },
+           aclick: function(){
+               console.log("超链接被点击");
+           }
+       }
+   });
+</script>
+</html>

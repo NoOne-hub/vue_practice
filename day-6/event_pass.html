@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <table @click.prevent="editItem($event)">
+            <tr>
+                <td>序号</td>
+                <td>名称</td>
+                <td>价格</td>
+                <td>操作</td>
+            </tr>
+            <tr v-for="(good, index) in goodsList">
+                <td> {{ index+1}} </td>
+                <td> {{ good.name}} </td>
+                <td> {{ good.price}} </td>
+                <td> <a href="#" v-bind:data-index="index">编辑</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    /*
+借助事件对象实现一个事件委派机制, 从而提高应用程序性能
+什么是事件委派机制? 事件委派在列表渲染过程中,大部分是在v-for指令中, 借助event事件对象在父级元素中绑定事件处理函数
+借助event事件对象, 在父级元素中绑定事件处理函数,而不是在子元素上绑定事件处理函数
+    */
+    var vm = new Vue({
+       el: '#app',
+       data : {
+        goodsList: [
+            {name: 'iphone', price: '8888'},
+            {name: 'mp3', price: '888'},
+            {name: 'video', price: '88'},
+            {name: 'TV', price: '7777'}
+        ]
+        },
+        methods: {
+            editItem:function(event){
+                console.log("click");
+                
+                if(event.target.nodeName.toLowerCase() == 'a'){
+                    console.log(event.target.nodeName.toLowerCase() == 'a');
+                }
+            }
+        }
+   });
+</script>
+</html>

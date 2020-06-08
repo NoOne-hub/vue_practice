@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <td>序号</td>
+                <td>名称</td>
+                <td>价格</td>
+                <td>操作</td>
+            </tr>
+            <tr v-for="(good, index) in goodsList">
+                <td> {{ index+1}} </td>
+                <td> {{ good.name}} </td>
+                <td> {{ good.price}} </td>
+                <td> <a href="#" @click.prevent="editItem($event)">编辑</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    /*
+    事件处理事件对象,即在事件处理过程中会自动触发一个event事件对象
+    从而可以做某些事情
+
+    event.type事件类型
+    event.target 触发事件的html元素
+    event.preventDeafult 阻止事件默认行为
+    envet.stopPropagation 阻止冒泡行为
+
+    在Vue使用事件对象分两步
+    1. 传递事件对象 当v-on绑定处理函数时候, 手动传递事件对象$event,当传递多个参数时
+    $event永远在最后,代表当前对象
+    2. 接受事件对象, 在methods方法中定义函数位置,通过形参接受事件对象
+    */
+   var vm = new Vue({
+       el: '#app',
+       data : {
+        goodsList: [
+            {name: 'iphone', price: '8888'},
+            {name: 'mp3', price: '888'},
+            {name: 'video', price: '88'},
+            {name: 'TV', price: '7777'}
+        ]
+        },
+        methods: {
+            editItem:function(event){
+                console.log(event);
+                console.log(event.target);
+                console.log(event.type);
+            }
+        }
+   });
+</script>
+</html>
