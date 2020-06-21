@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn self</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="good in goodsList">
+                {{ good.name }} === {{ good.price }}
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="./static/js/vue.js"></script>
+<script type="text/javascript">
+    /*
+    列表元素,输出一组属性,用v-for
+    */
+    var data = {
+        goodsList: [
+            {name: 'iphone', price: '8888'},
+            {name: 'mp3', price: '888'},
+            {name: 'video', price: '88'}
+        ]
+    }
+    var vm = new Vue({
+        el: '#app',
+        data: data,
+        computed: {
+            get: function(){
+                return this.$data.goodsList
+            },
+            set: function(newValue){
+                this.$data.goodsList = newValue
+            }
+        }
+    })
+</script>
+</html>

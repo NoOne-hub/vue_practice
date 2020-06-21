@@ -260,3 +260,28 @@ v-model会根据空间类型自动选取正确的方法来更新元素
 
 ![image-20200608170458419](imgs/image-20200608170458419.png)
 
+
+
+## 自学
+
+```
+npm install -g vue-cli
+vue init webpack Vue-Project
+npm install vue-router vue-resource --save
+npm run dev
+```
+
+![image-20200608171011578](imgs/image-20200608171011578.png)
+
+
+
+表单修饰符
+
+.lazy  延迟更新,在change时候更新
+
+.number 将用户输入值转为数值类型
+
+.trim 过滤用户输入的首尾空白字符
+
+
+

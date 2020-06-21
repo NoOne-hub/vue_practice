@@ -242,3 +242,169 @@ el里填的为id选择器, data里填的为键值对, 对应内容为模板类�
 
 
 
+## 自学
+
+jquery学习
+
+```javascript
+    $("#box").width("100px");
+    $("#box").height("100px");
+    $("#box").css({
+        "width": "100px",
+        "height": "100px",
+        "background-color": "red"
+    });
+```
+
+jquery跟dom那里操作属性不太一样, dom获取到元素后,用 元素.style.属性 设置css可以
+
+而jquery直接用.css设置效果, 宽高可以直接.出来
+
+
+
+v-for
+
+1. 表格可以用v-for, 大量数据传入
+
+```vue
+<div id="app-4">
+    <ul>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ul>
+</div>
+```
+
+结合
+
+```javascript
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos:[
+                {text: '测试1'},
+                {text: '测试2'},
+                {text: '测试3'}
+            ]
+        }
+    });
+```
+
+类似python的for in, todos为我们需要传入的数组, todo为每个数组内容
+
+![image-20200603165216757](imgs/image-20200603165216757.png)
+
+
+
+v-if
+
+1. 可以用在状态之间的转换,比如未登录与登录状态
+
+```vue
+<div id="app-3">
+    <p v-if="seen">现在你看到我</p>
+</div>
+```
+
+结合
+
+```javascript
+    var app3 = new Vue({
+        el: '#app-3',
+        data: {
+            seen: true
+        }
+    });
+```
+
+v-on:click
+
+1. 按钮事件
+
+```vue
+<div id="app-5">
+    <p>{{ message}}</p>
+    <button v-on:click="reverseMessage">反转消息</button>
+</div>
+```
+
+结合
+
+```javascript
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            message: "app-5"
+        },
+        methods: {
+            reverseMessage:function(){
+                this.message = "我点击了按钮"
+            }
+        }
+    });
+```
+
+![image-20200603165236973](imgs/image-20200603165236973.png)
+
+v-model
+
+```vue
+<div id="app-6">
+    <p>{{ message}}</p>
+    <input v-model="message"/>
+</div>
+```
+
+结合
+
+```javascript
+    var app6 = new Vue({
+        el: '#app-6',
+        data:{
+            message: "app-6"
+        },
+
+    })
+```
+
+
+
+![image-20200603165837077](imgs/image-20200603165837077.png)
+
+这个会同时更新, v-model=message, 然后他的内容就会随着message的内容更新
+
+
+
+v-bind
+
+```vue
+<div id="app-2">
+    <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息
+    </span>
+</div>
+```
+
+结合
+
+```javascript
+    var app2 = new Vue({
+        el: '#app-2',
+        data:{
+            message: '页面加载于' + new Date().toLocaleString()
+        }
+    });
+// app2.message="新消息";
+```
+
+这里如果修改了message,体现了数据的双向绑定
+
+bind:title, 也就是说绑定title, 标题
+
+1. v-for
+2. v-if
+3. v-model
+4. v-bind
+5. v-on:click
+

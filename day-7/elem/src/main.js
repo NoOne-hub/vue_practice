@@ -3,21 +3,23 @@
 import Vue from 'vue'
 import App from './App'
 import Router from 'vue-router'
-
+import Resource from 'vue-resource'
 import goods from './components/sellers/goods/goods'
 import ratings from './components/sellers/ratings/ratings'
 import seller from './components/sellers/seller/seller'
 
 import "./common/stylus/index.styl";
 Vue.use(Router)
+Vue.use(Resource)
 Vue.config.productionTip = false
 
 //定义路由页面
 
 const routes = [
-  { path: '/goods', components: goods},
-  { path: '/ratings', components: ratings},
-  { path: '/seller', components: seller}
+  { path: '/', component: goods},
+  { path: '/goods', component: goods},
+  { path: '/ratings', component: ratings},
+  { path: '/seller', component: seller}
 ]
 const router = new Router({
     routes

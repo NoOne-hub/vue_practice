@@ -398,3 +398,41 @@ v-for可以渲染对象, 渲染对象时候,遍历对象所有属性值
 
 ![image-20200604161759900](imgs/image-20200604161759900.png)
 
+## 自学
+
+
+
+computed还有get, set方法
+
+```vue
+    var data = {
+        goodsList: [
+            {name: 'iphone', price: '8888'},
+            {name: 'mp3', price: '888'},
+            {name: 'video', price: '88'}
+        ]
+    }
+    var vm = new Vue({
+        el: '#app',
+        data: data,
+        computed: {
+            get: function(){
+                return this.$data.goodsList
+            },
+            set: function(newValue){
+                this.$data.goodsList = newValue
+            }
+        }
+    })
+```
+
+v-on有缩写
+
+```vue
+<a @click="event">百度</a>
+<a v-on:click="event">谷歌</a>
+<a @[event]="event">测试</a>
+```
+
+v-bind有动态参数
+

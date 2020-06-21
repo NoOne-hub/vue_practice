@@ -178,3 +178,15 @@ App.vue导入header组件
 
 
 
+## 自学总结
+
+1. 模块化, 然后加路由,
+
+2. stylus语法,利用缩进进行, 跟python一样
+
+3. 2倍图的概念, 使用要缩小两倍
+4. 运行 npm run dev
+5. 导入语法, @import是stylus的语法, import是js的语法
+6. 一个项目搞起来不容易啊
+7. 局域网访问. 修改config/index.js  的localhost改为0.0.0.0
+
